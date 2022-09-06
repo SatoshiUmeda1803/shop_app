@@ -9,7 +9,7 @@ MacBookPro(M1,2021)
 
 参考URL: https://zenn.dev/osuzuki/articles/a535b2840bbea3
 
-### 01. Command Line Toolsをインスツール
+### 01. Command Line Toolsをインストール
  
  ```
  xcode-select --install
