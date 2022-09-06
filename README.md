@@ -1,24 +1,71 @@
-# README
+# 環境構築の手順
+### インストール環境
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+macOS Monterey 12.51
 
-Things you may want to cover:
+MacBookPro(M1,2021)
 
-* Ruby version
+学習を始めた当時、環境構築にかなり苦戦した記憶があり、現在の環境にたどり着くまでの正確な手順として正しいかは定かではないのですが、当時の記録をもとに記載します。
 
-* System dependencies
+参考URL: https://zenn.dev/osuzuki/articles/a535b2840bbea3
 
-* Configuration
+### 01. Command Line Toolsをインスツール
+ 
+ ```
+ xcode-select --install
+ ```
+ 
 
-* Database creation
+### 02. rbenvのインストール
 
-* Database initialization
+  そのためのHomebrewをインストール
+  ```
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+  ```
+  rbenvを入手
+  ```
+  brew install ruby-build rbenv
+  ```
+  パスを通して初期化
+  ```
+  echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.zshrc
+  echo 'eval "$(rbenv init -)"' >> ~/.zshrc
+  ```
+  
+### 03. Rubyをインストール
 
-* How to run the test suite
+  Rubyをインストール
+  ```
+  rbenv install 2.7.6
+  ```
+  切り替え
+  ```
+  rbenv global 2.7.6
+  ```
+  
+### 04. Railsをインストール
 
-* Services (job queues, cache servers, search engines, etc.)
+  Railsをインストール
+  ```
+  gem install rails -v 6.0.5.1 
+  ```
+  
+### 05. yarnをインストール
 
-* Deployment instructions
+   Homebrewでインストール
+   ```
+   brew install yarn
+   ```
+   
+### 06. プロジェクト作成
 
-* ...
+  バージョンを指定してプロジェクト作成
+  ```
+  rails _6.0.5.1_ new shop_app
+  ```
+  サーバーを起動
+  ```
+  rails s
+  ```
+  ブラウザで http://localhost:3000/ にアクセスすると「Yay! You’re on Rails!」ページが表示
+  
