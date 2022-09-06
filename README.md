@@ -79,7 +79,7 @@ MacBookPro(M1,2021)
   rails db:seed  
   ```
   
-### Webpackerのインストール
+### 08. Webpackerのインストール
 
   Webpacker::Manifest::MissingEntryErrorが発生したため、Webpackerをインストールして解決
   ```
