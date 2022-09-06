@@ -75,6 +75,7 @@ MacBookPro(M1,2021)
   
   Fakerを用いてダミーデータを作成
   ```
+  bundle install
   rails db:seed  
   ```
   
