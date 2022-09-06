@@ -69,3 +69,12 @@ MacBookPro(M1,2021)
   ```
   ブラウザで http://localhost:3000/ にアクセスすると「Yay! You’re on Rails!」ページが表示
   
+### 07. ダミーデータの作成
+
+  データベースはSQliteを使用
+  
+  Fakerを用いてダミーデータを作成
+  ```
+  rails db:seed  
+  ```
+  
