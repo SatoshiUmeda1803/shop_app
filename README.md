@@ -87,4 +87,12 @@ MacBookPro(M1,2021)
   rails webpacker:compile
   ```
   
+### 09. Bootstrapをインストール
+
+  iQeuryとpopper.jsを同時にインストール
+  ```
+  yarn add jquery@3.5.1 bootstrap@4.5.0 popper.js@1.16.0
+  ```
+  
+  
   
