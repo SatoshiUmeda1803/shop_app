@@ -1,0 +1,25 @@
+<div class="container">
+  <h1>商品詳細</h1>
+  <div class="row">
+    <div class="product-image">
+      <img src="<%= @product.product_image %>">
+    </div>
+    <div class="product-info">
+      <h2><%= @product.name %></h2></br>
+      商品id:<%= @product.id %></br>
+      <h3><%= @product.price %>円</h3></br>
+      ●商品説明</br>
+      <%= @product.description %></br>
+      ●商品カテゴリ</br>
+      <%= @product.category.name %></br>
+      ●製造メーカー</br>
+      <%= @product.manufacturer.name %></br>
+      ●製造メーカー紹介</br>
+      <%= @product.manufacturer.description %></br>
+      
+      <h3>同じ会社のその他の商品</h3></br>
+      <%= render partial: 'products/manufacturer_product' , collection: @manufacturer_products %>
+
+    </div>
+  </div>
+</div>

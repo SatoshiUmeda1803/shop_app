@@ -1,0 +1,6 @@
+<div class="col-sm-12 col-lg-4 mb-3">
+  ID<%= product.id %></br>
+  <h3><%= link_to product.name, product_path(product) %></h3></br>
+  商品説明:<%= product.description %></br>
+  製造会社:<%= product.manufacturer.name %>
+</div>
