@@ -5,7 +5,8 @@
       <img src="<%= @product.product_image %>">
     </div>
     <div class="product-info">
-      <h2><%= @product.name %></h2></br>
+      <h2><%= @product.name %></h2>
+      レビュー数<%= link_to @number_of_reviews,product_reviews_path(@product) %></br>
       商品id:<%= @product.id %></br>
       <h3><%= @product.price %>円</h3></br>
       ●商品説明</br>
@@ -19,7 +20,6 @@
       
       <h3>同じ会社のその他の商品</h3></br>
       <%= render partial: 'products/manufacturer_product' , collection: @manufacturer_products %>
-
     </div>
   </div>
 </div>
