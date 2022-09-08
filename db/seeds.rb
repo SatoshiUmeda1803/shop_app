@@ -29,3 +29,12 @@ end
     category: Category.offset(rand(Category.count)).first,
   )
 end
+
+Tag.create([
+  {name: 'デザイン'},
+  {name: '使い心地'},
+  {name: '成分'},
+  {name: '価格'},
+  {name: '説明書'},
+  {name: '耐久性'}
+])
