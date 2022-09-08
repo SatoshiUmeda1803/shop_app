@@ -1,0 +1,40 @@
+<div class="row mb-3">
+  <div class="col-lg-8 offset-lg-2">
+    <h3>レビュー投稿</h3>
+    <%= form_with model: [product, review] do |f| %>
+      <%= f.hidden_field :product_id, value: product['id'] %>
+      <div class="form-group">
+        <%= f.label :name %>
+        <%= f.text_field :name, class:'form-control',  rows: 1 %>
+      </div>
+      <div class='form-group'>
+        <%= f.collection_check_boxes(:tag_ids, Tag.all, :id, :name) do |tag| %>
+          <div class='form-check'>
+            <%= tag.label class: 'form-check-label' do %>
+              <%= tag.check_box class: 'form-check-input' %>
+              <%= tag.text %>
+            <% end %>
+          </div>
+        <% end %>
+      </div>
+      <div class="form-group">
+        <%= f.label :comment %>
+        <%= f.text_area :comment, class:'form-control' %>
+      </div>
+      <div class="form-group">
+        <p>評価　5が最高</p>
+        <%= f.radio_button :rate,  '1' %>
+        <%= f.label :rate, '1', value: 1 %>
+        <%= f.radio_button :rate,  '2' %>
+        <%= f.label :rate, '2', value: 2 %>
+        <%= f.radio_button :rate,  '3' %>
+        <%= f.label :rate, '3', value: 3 %>
+        <%= f.radio_button :rate,  '4' %>
+        <%= f.label :rate, '4', value: 4 %>
+        <%= f.radio_button :rate,  '5' %>
+        <%= f.label :rate, '5', value: 5 %>
+      </div>
+      <%= f.submit '投稿', class: 'btn btn-primary' %>
+    <% end %>
+  </div>
+</div>

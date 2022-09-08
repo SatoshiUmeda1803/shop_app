@@ -1,0 +1,9 @@
+<div class="containner" style="padding-top: 1rem">
+  名前:<%= review.name %></br>
+  レビュー内容</br>
+  <% review.tags.each do |tag| %>
+    <span><%= tag.name %></span>
+  <% end %>について</br>
+  <%= review.comment %></br>
+  評価<%= review.rate %>
+</div>

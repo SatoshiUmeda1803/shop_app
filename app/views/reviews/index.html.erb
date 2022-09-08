@@ -1,0 +1,9 @@
+<div class="container">
+  <h1><%= @product.name %>のレビュー一覧</h1>
+  <div class="reviews" >
+    <%= render @reviews %>
+  </div>
+  <div class="form">
+    <%= render 'reviews/form',{review:@review, product:@product} %>
+  </div>
+</div>
