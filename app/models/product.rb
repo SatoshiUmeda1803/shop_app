@@ -6,4 +6,17 @@ class Product < ApplicationRecord
 
   validates :name, presence: true
   validates :price, presence: true
+
+  def avg_score
+    unless self.reviews.empty?
+      reviews.average(:rate).round(1)
+    else
+      '-'
+    end
+  end
+
+  def count_reviews
+    self.reviews.count
+  end
+
 end
