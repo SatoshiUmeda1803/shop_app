@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_09_08_103751) do
+ActiveRecord::Schema.define(version: 2022_09_09_140343) do
 
   create_table "categories", force: :cascade do |t|
     t.string "name", null: false
@@ -34,6 +34,8 @@ ActiveRecord::Schema.define(version: 2022_09_08_103751) do
     t.integer "category_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.float "rate"
+    t.integer "review_count"
     t.index ["category_id"], name: "index_products_on_category_id"
     t.index ["manufacturer_id"], name: "index_products_on_manufacturer_id"
   end
@@ -50,10 +52,13 @@ ActiveRecord::Schema.define(version: 2022_09_08_103751) do
   create_table "reviews", force: :cascade do |t|
     t.string "name", null: false
     t.string "comment", null: false
-    t.integer "rate", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "product_id", null: false
+    t.integer "price_rate", null: false
+    t.integer "design_rate", null: false
+    t.integer "quality_rate", null: false
+    t.float "rate"
     t.index ["product_id"], name: "index_reviews_on_product_id"
   end
 
