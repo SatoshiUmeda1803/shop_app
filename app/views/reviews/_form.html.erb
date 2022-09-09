@@ -21,18 +21,44 @@
         <%= f.label :comment %>
         <%= f.text_area :comment, class:'form-control' %>
       </div>
+      <div class="form-group" >
+        <p>価格評価</p>
+        <%= f.radio_button :price_rate,  '1' %>
+        <%= f.label :price_rate, '1', value: 1 %>
+        <%= f.radio_button :price_rate,  '2' %>
+        <%= f.label :price_rate, '2', value: 2 %>
+        <%= f.radio_button :price_rate,  '3' %>
+        <%= f.label :price_rate, '3', value: 3 %>
+        <%= f.radio_button :price_rate,  '4' %>
+        <%= f.label :price_rate, '4', value: 4 %>
+        <%= f.radio_button :price_rate,  '5' %>
+        <%= f.label :price_rate, '5', value: 5 %>
+      </div>
       <div class="form-group">
-        <p>評価　5が最高</p>
-        <%= f.radio_button :rate,  '1' %>
-        <%= f.label :rate, '1', value: 1 %>
-        <%= f.radio_button :rate,  '2' %>
-        <%= f.label :rate, '2', value: 2 %>
-        <%= f.radio_button :rate,  '3' %>
-        <%= f.label :rate, '3', value: 3 %>
-        <%= f.radio_button :rate,  '4' %>
-        <%= f.label :rate, '4', value: 4 %>
-        <%= f.radio_button :rate,  '5' %>
-        <%= f.label :rate, '5', value: 5 %>
+        <p>デザイン評価</p>
+        <%= f.radio_button :design_rate,  '1' %>
+        <%= f.label :design_rate, '1', value: 1 %>
+        <%= f.radio_button :design_rate,  '2' %>
+        <%= f.label :design_rate, '2', value: 2 %>
+        <%= f.radio_button :design_rate,  '3' %>
+        <%= f.label :design_rate, '3', value: 3 %>
+        <%= f.radio_button :design_rate,  '4' %>
+        <%= f.label :design_rate, '4', value: 4 %>
+        <%= f.radio_button :design_rate,  '5' %>
+        <%= f.label :design_rate, '5', value: 5 %>
+      </div>
+      <div class="form-group">
+        <p>品質評価</p>
+        <%= f.radio_button :quality_rate, value= '1' %>
+        <%= f.label :quality_rate, '1', value: 1 %>
+        <%= f.radio_button :quality_rate,  '2' %>
+        <%= f.label :quality_rate, '2', value: 2 %>
+        <%= f.radio_button :quality_rate,  '3' %>
+        <%= f.label :quality_rate, '3', value: 3 %>
+        <%= f.radio_button :quality_rate,  '4' %>
+        <%= f.label :quality_rate, '4', value: 4 %>
+        <%= f.radio_button :quality_rate,  '5' %>
+        <%= f.label :quality_rate, '5', value: 5 %>
       </div>
       <%= f.submit '投稿', class: 'btn btn-primary' %>
     <% end %>
