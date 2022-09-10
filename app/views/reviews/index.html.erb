@@ -1,9 +1,9 @@
 <div class="container">
-  <h1><%= @product.name %>のレビュー一覧</h1>
+  <h1><%= link_to @product.name,product_path(@product) %>のレビュー一覧</h1><%= link_to '商品詳細へ戻る:', product_path(@product) %><%= link_to ':商品一覧へ戻る', root_path %>
   <div class="reviews" >
     <%= render @reviews %>
   </div>
-  <div class="form">
+  <div class="form" style="padding-top: 3rem">
     <%= render 'reviews/form',{review:@review, product:@product} %>
   </div>
 </div>
