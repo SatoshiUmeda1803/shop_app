@@ -1,8 +1,9 @@
 <div class="container">
   <h1>商品一覧</h1>
   <div class="row">
-  <%= sort_link(@q, :rate, "評価",default_order: :desc)%>
-  <%= sort_link(@q, :review_count, "レビュー数",default_order: :desc)%>
+  並び替え-
+  <%= sort_link(@q, :rate, "評価:",default_order: :desc)%>
+  <%= sort_link(@q, :review_count, "レビュー数:",default_order: :desc)%>
   <%= sort_link(@q, :created_at, "日時",default_order: :desc) %>
     <div class="col-12">
       <div class="row">
