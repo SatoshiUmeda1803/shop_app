@@ -1,6 +1,7 @@
 class ProductsController < ApplicationController
   def index
     @q = Product.ransack(params[:q])
+    @q.sorts = 'review_count desc' if @q.sorts.empty?
     @products = @q.result(distinct: true)
   end
 

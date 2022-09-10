@@ -239,5 +239,6 @@ end
 
 Product.all.each do |product|
   product.rate = product.avg_score
+  product.review_count = product.count_reviews
   product.save
 end
