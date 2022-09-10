@@ -1,0 +1,10 @@
+<div class="containner border" style="padding-top: 1rem">
+  名前:<%= review.name %></br>
+  レビュー内容</br>
+  <% review.tags.each do |tag| %>
+    <span><%= tag.name %></span>
+  <% end %>について</br>
+  <%= review.comment %></br>
+  評価<%= review.rate %></br>
+  内訳:価格<%= review.price_rate %>デザイン<%= review.design_rate %>品質<%= review.quality_rate %>
+</div>

@@ -1,11 +1,20 @@
 <div class="container">
+  <%= link_to '商品一覧へ戻る', products_path %>
   <h1>商品詳細</h1>
   <div class="row">
     <div class="product-image">
-      <img src="<%= @product.product_image %>">
+      <%= image_tag @product.product_image %>
     </div>
+  </div>
+  <div class="row">
     <div class="product-info">
-      <h2><%= @product.name %></h2></br>
+      <h2><%= @product.name %></h2>
+      レビュー数<%= link_to @product.count_reviews,product_reviews_path(@product) %>-評価
+      <% unless @product.reviews.empty? %>
+        <%= link_to @product.rate, product_reviews_path(@product) %>
+      <% else %>
+        <%= link_to '-' , product_reviews_path(@product)%>
+      <% end %></br>
       商品id:<%= @product.id %></br>
       <h3><%= @product.price %>円</h3></br>
       ●商品説明</br>
@@ -16,10 +25,10 @@
       <%= @product.manufacturer.name %></br>
       ●製造メーカー紹介</br>
       <%= @product.manufacturer.description %></br>
-      
-      <h3>同じ会社のその他の商品</h3></br>
-      <%= render partial: 'products/manufacturer_product' , collection: @manufacturer_products %>
-
     </div>
+  </div>
+  <div class="products" style="padding-top: 1rem">
+    <h3>同じ会社のその他の商品</h3></br>
+    <%= render partial: 'products/manufacturer_product' , collection: @manufacturer_products %>
   </div>
 </div>
